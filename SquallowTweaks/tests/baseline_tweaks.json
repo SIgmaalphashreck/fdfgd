@@ -1,0 +1,1663 @@
+{
+ "profiles": {
+  "competitive": [
+   "Competitive",
+   "Alles Empfohlene für dein System."
+  ],
+  "maxfps": [
+   "Max FPS",
+   "Competitive plus Effekte, Hintergrund und Telemetrie aus, GPU-MSI."
+  ],
+  "safe": [
+   "Safe",
+   "Nur Basis-Tweaks, minimales Risiko."
+  ]
+ },
+ "tweaks": [
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": false,
+   "categories": [
+    "System"
+   ],
+   "description": "Store-Apps laufen nicht im Hintergrund.",
+   "dynamic": null,
+   "evidence": "klein",
+   "hook": "",
+   "id": "bg_apps_off",
+   "impact": "Spart CPU, RAM und Netzwerk.",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "registry",
+   "name": "Hintergrund-Apps aus",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "",
+   "restart": "Neuanmeldung",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [
+    "FPS"
+   ],
+   "values": [
+    {
+     "name": "GlobalUserDisabled",
+     "path": "Software\\Microsoft\\Windows\\CurrentVersion\\BackgroundAccessApplications",
+     "rtype": 4,
+     "value": 1
+    },
+    {
+     "name": "BackgroundAppGlobalToggle",
+     "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Search",
+     "rtype": 4,
+     "value": 0
+    }
+   ],
+   "why": "Weniger Hintergrundlast."
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": true,
+   "categories": [
+    "Netzwerk"
+   ],
+   "description": "Dein PC lädt keine Windows-Updates für andere hoch.",
+   "dynamic": null,
+   "evidence": "klein",
+   "hook": "",
+   "id": "delivery_opt_off",
+   "impact": "Delivery Optimization aus. Verhindert Upload im Hintergrund, der den Ping stören kann.",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "registry",
+   "name": "Kein Update-Upload",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "",
+   "restart": "Neustart",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [
+    "PING"
+   ],
+   "values": [
+    {
+     "name": "DODownloadMode",
+     "path": "HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\DeliveryOptimization",
+     "rtype": 4,
+     "value": 0
+    }
+   ],
+   "why": "Kein Hintergrund-Upload."
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": true,
+   "categories": [
+    "System"
+   ],
+   "description": "DiagTrack läuft nicht mehr.",
+   "dynamic": null,
+   "evidence": "schwach",
+   "hook": "",
+   "id": "diagtrack_off",
+   "impact": "Starttyp 'Deaktiviert' für den Dienst 'Benutzererfahrungen und Telemetrie'.",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "registry",
+   "name": "Telemetrie-Dienst aus",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "",
+   "restart": "Neustart",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [
+    "FPS"
+   ],
+   "values": [
+    {
+     "name": "Start",
+     "path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\DiagTrack",
+     "rtype": 4,
+     "value": 4
+    }
+   ],
+   "why": ""
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": true,
+   "categories": [
+    "System"
+   ],
+   "description": "Echter Neustart statt Hibernate-Start: sauberere Treiber.",
+   "dynamic": null,
+   "evidence": "klein",
+   "hook": "",
+   "id": "faststartup_off",
+   "impact": "HiberbootEnabled=0. Behebt Treiber-Reste nach dem Herunterfahren; Bootzeit minimal länger.",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "registry",
+   "name": "Windows-Schnellstart aus",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "",
+   "restart": "Neustart",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [],
+   "values": [
+    {
+     "name": "HiberbootEnabled",
+     "path": "HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Power",
+     "rtype": 4,
+     "value": 0
+    }
+   ],
+   "why": ""
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": false,
+   "categories": [
+    "Fortnite"
+   ],
+   "description": "Spürbar mehr FPS, Kanten sind etwas gezackt.",
+   "dynamic": null,
+   "evidence": "belegt",
+   "hook": "",
+   "id": "fn_aa_off",
+   "impact": "sg.AntiAliasingQuality=0. Wirkt mit Fortnite-Rendering 'Performance' und DX11 am stärksten.",
+   "info_text": "",
+   "ini_section": "/Script/FortniteGame.FortGameUserSettings",
+   "ini_values": {
+    "/Script/FortniteGame.FortGameUserSettings|sg.AntiAliasingQuality": "0",
+    "ScalabilityGroups|sg.AntiAliasingQuality": "0"
+   },
+   "kind": "ini",
+   "name": "Anti-Aliasing aus",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "",
+   "restart": "Nein",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [
+    "FPS"
+   ],
+   "values": [],
+   "why": ""
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": false,
+   "categories": [
+    "Fortnite"
+   ],
+   "description": "Windows-Kompatibilitäts-Flag direkt für Fortnite.",
+   "dynamic": "<function fortnite_exe_flag_values at 0x>",
+   "evidence": "klein",
+   "hook": "",
+   "id": "fn_exe_flags",
+   "impact": "Setzt für FortniteClient-Win64-Shipping.exe das Flag 'Vollbildoptimierungen deaktivieren'. Pfad kommt aus dem Epic Launcher.",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "registry",
+   "name": "Vollbild-Optimierung für Fortnite aus",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "competitive",
+   "restart": "Nein",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [
+    "LATENZ"
+   ],
+   "values": [],
+   "why": "Direkter Vollbild-Pfad."
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": false,
+   "categories": [
+    "Fortnite"
+   ],
+   "description": "Kein FPS-Überlauf über deine Monitor-Hz.",
+   "dynamic": null,
+   "evidence": "klein",
+   "hook": "",
+   "id": "fn_fps_limit",
+   "impact": "FrameRateLimit=240. Glättet die Frametime.",
+   "info_text": "",
+   "ini_section": "/Script/FortniteGame.FortGameUserSettings",
+   "ini_values": {
+    "FrameRateLimit": "240.000000"
+   },
+   "kind": "ini",
+   "name": "FPS-Limit 240",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "fortnite",
+   "restart": "Nein",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [
+    "FRAMETIME"
+   ],
+   "values": [],
+   "why": "Stabile Frametimes."
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": false,
+   "categories": [
+    "Fortnite"
+   ],
+   "description": "Vollbild statt Fenster-Vollbild.",
+   "dynamic": null,
+   "evidence": "klein",
+   "hook": "",
+   "id": "fn_fullscreen",
+   "impact": "FullscreenMode=0. Senkt die Eingabelatenz.",
+   "info_text": "",
+   "ini_section": "/Script/FortniteGame.FortGameUserSettings",
+   "ini_values": {
+    "FullscreenMode": "0",
+    "LastConfirmedFullscreenMode": "0",
+    "PreferredFullscreenMode": "0"
+   },
+   "kind": "ini",
+   "name": "Echtes Vollbild",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "fortnite",
+   "restart": "Nein",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [
+    "LATENZ"
+   ],
+   "values": [],
+   "why": "Direkter Pfad."
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": false,
+   "categories": [
+    "Fortnite"
+   ],
+   "description": "Windows startet Fortnite auf der Hochleistungs-GPU.",
+   "dynamic": "<function fortnite_gpu_pref_values at 0x>",
+   "evidence": "klein",
+   "hook": "",
+   "id": "fn_gpu_pref",
+   "impact": "Setzt die GPU-Präferenz für Fortnite auf 'Hochleistung'. Hilft vor allem bei Systemen mit zwei Grafikchips.",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "registry",
+   "name": "Fortnite nutzt die starke GPU",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "",
+   "restart": "Nein",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [
+    "FPS"
+   ],
+   "values": [],
+   "why": ""
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": false,
+   "categories": [
+    "Fortnite"
+   ],
+   "description": "Schatten, Effekte, Post, Laub, GI, Reflexionen auf Niedrig.",
+   "dynamic": null,
+   "evidence": "belegt",
+   "hook": "",
+   "id": "fn_graphics_perf",
+   "impact": "Der größte Hebel für FPS und 1%-Lows. Sichtweite und Texturen bleiben unverändert. Fortnite muss beendet sein.",
+   "info_text": "",
+   "ini_section": "/Script/FortniteGame.FortGameUserSettings",
+   "ini_values": {
+    "/Script/FortniteGame.FortGameUserSettings|sg.EffectsQuality": "0",
+    "/Script/FortniteGame.FortGameUserSettings|sg.FoliageQuality": "0",
+    "/Script/FortniteGame.FortGameUserSettings|sg.GlobalIlluminationQuality": "0",
+    "/Script/FortniteGame.FortGameUserSettings|sg.PostProcessQuality": "0",
+    "/Script/FortniteGame.FortGameUserSettings|sg.ReflectionQuality": "0",
+    "/Script/FortniteGame.FortGameUserSettings|sg.ShadingQuality": "0",
+    "/Script/FortniteGame.FortGameUserSettings|sg.ShadowQuality": "0",
+    "ScalabilityGroups|sg.EffectsQuality": "0",
+    "ScalabilityGroups|sg.FoliageQuality": "0",
+    "ScalabilityGroups|sg.GlobalIlluminationQuality": "0",
+    "ScalabilityGroups|sg.PostProcessQuality": "0",
+    "ScalabilityGroups|sg.ReflectionQuality": "0",
+    "ScalabilityGroups|sg.ShadingQuality": "0",
+    "ScalabilityGroups|sg.ShadowQuality": "0"
+   },
+   "kind": "ini",
+   "name": "Grafik auf Leistung",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "fortnite",
+   "restart": "Nein",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [
+    "FPS",
+    "FRAMETIME"
+   ],
+   "values": [],
+   "why": "Weniger GPU/CPU-Last."
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": false,
+   "categories": [
+    "Fortnite"
+   ],
+   "description": "Weniger Wärme und Lärm im Menü.",
+   "dynamic": null,
+   "evidence": "klein",
+   "hook": "",
+   "id": "fn_menu_fps",
+   "impact": "MenuFrameRateLimit_Unified=60. Kein Einfluss auf Matches.",
+   "info_text": "",
+   "ini_section": "/Script/FortniteGame.FortGameUserSettings",
+   "ini_values": {
+    "MenuFrameRateLimit_Unified": "60.000000"
+   },
+   "kind": "ini",
+   "name": "Lobby auf 60 FPS",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "",
+   "restart": "Nein",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [],
+   "values": [],
+   "why": ""
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": false,
+   "categories": [
+    "Fortnite"
+   ],
+   "description": "Klareres Bild beim Drehen.",
+   "dynamic": null,
+   "evidence": "klein",
+   "hook": "",
+   "id": "fn_motionblur_off",
+   "impact": "bMotionBlur=False.",
+   "info_text": "",
+   "ini_section": "/Script/FortniteGame.FortGameUserSettings",
+   "ini_values": {
+    "bMotionBlur": "False"
+   },
+   "kind": "ini",
+   "name": "Bewegungsunschärfe aus",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "fortnite",
+   "restart": "Nein",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [
+    "FPS"
+   ],
+   "values": [],
+   "why": "Klarer und leichter."
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": false,
+   "categories": [
+    "Fortnite"
+   ],
+   "description": "Weniger Eingabelatenz.",
+   "dynamic": null,
+   "evidence": "belegt",
+   "hook": "",
+   "id": "fn_vsync_off",
+   "impact": "bUseVSync=False. Mit G-SYNC/FreeSync kaum Tearing.",
+   "info_text": "",
+   "ini_section": "/Script/FortniteGame.FortGameUserSettings",
+   "ini_values": {
+    "bUseVSync": "False"
+   },
+   "kind": "ini",
+   "name": "V-Sync aus",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "fortnite",
+   "restart": "Nein",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [
+    "LATENZ"
+   ],
+   "values": [],
+   "why": "V-Sync erhöht Latenz."
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": false,
+   "categories": [
+    "Gaming",
+    "Latenz"
+   ],
+   "description": "Direkter Vollbild-Pfad statt Fenster-Optimierung.",
+   "dynamic": null,
+   "evidence": "klein",
+   "hook": "",
+   "id": "fso_global",
+   "impact": "Kann die Eingabelatenz in DirectX-Spielen senken. Alt-Tab ist etwas träger.",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "registry",
+   "name": "Echtes Vollbild bevorzugen",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "competitive",
+   "restart": "nächster Spielstart",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [
+    "LATENZ"
+   ],
+   "values": [
+    {
+     "name": "GameDVR_FSEBehaviorMode",
+     "path": "System\\GameConfigStore",
+     "rtype": 4,
+     "value": 2
+    },
+    {
+     "name": "GameDVR_HonorUserFSEBehaviorMode",
+     "path": "System\\GameConfigStore",
+     "rtype": 4,
+     "value": 1
+    },
+    {
+     "name": "GameDVR_DXGIHonorFSEWindowsCompatible",
+     "path": "System\\GameConfigStore",
+     "rtype": 4,
+     "value": 1
+    }
+   ],
+   "why": "Weniger Latenz im Vollbild."
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": false,
+   "categories": [
+    "Gaming"
+   ],
+   "description": "Keine Hintergrundaufnahme.",
+   "dynamic": null,
+   "evidence": "klein",
+   "hook": "",
+   "id": "game_dvr",
+   "impact": "Schaltet Xbox-Hintergrundaufnahme ab (spart Overhead). Clips über die Game Bar gehen dann nicht mehr.",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "registry",
+   "name": "Game DVR aus",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "baseline",
+   "restart": "Neustart des Spiels",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [
+    "FPS"
+   ],
+   "values": [
+    {
+     "name": "GameDVR_Enabled",
+     "path": "System\\GameConfigStore",
+     "rtype": 4,
+     "value": 0
+    },
+    {
+     "name": "AppCaptureEnabled",
+     "path": "Software\\Microsoft\\Windows\\CurrentVersion\\GameDVR",
+     "rtype": 4,
+     "value": 0
+    }
+   ],
+   "why": "Entfernt Aufnahme-Overhead."
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": false,
+   "categories": [
+    "Gaming"
+   ],
+   "description": "Windows priorisiert das Spiel.",
+   "dynamic": null,
+   "evidence": "klein",
+   "hook": "",
+   "id": "game_mode",
+   "impact": "Spiele-Modus aktivieren. Der Effekt ist je nach System klein, aber sicher.",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "registry",
+   "name": "Windows Game Mode",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "baseline",
+   "restart": "Nein",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [
+    "FPS"
+   ],
+   "values": [
+    {
+     "name": "AutoGameModeEnabled",
+     "path": "Software\\Microsoft\\GameBar",
+     "rtype": 4,
+     "value": 1
+    },
+    {
+     "name": "AllowAutoGameMode",
+     "path": "Software\\Microsoft\\GameBar",
+     "rtype": 4,
+     "value": 1
+    }
+   ],
+   "why": "Standard für Spiele."
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": true,
+   "categories": [
+    "Gaming",
+    "Fortnite"
+   ],
+   "description": "Windows bevorzugt Spiele bei CPU und GPU.",
+   "dynamic": null,
+   "evidence": "schwach",
+   "hook": "",
+   "id": "games_task",
+   "impact": "MMCSS-Aufgabe 'Games': GPU-Priorität 8, Priorität 6, Kategorie High. Hilft bei Hintergrundlast und 1%-Lows.",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "registry",
+   "name": "Spiele-Priorität im Scheduler",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "",
+   "restart": "Neustart",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [
+    "FPS",
+    "FRAMETIME"
+   ],
+   "values": [
+    {
+     "name": "GPU Priority",
+     "path": "HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\\Tasks\\Games",
+     "rtype": 4,
+     "value": 8
+    },
+    {
+     "name": "Priority",
+     "path": "HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\\Tasks\\Games",
+     "rtype": 4,
+     "value": 6
+    },
+    {
+     "name": "Scheduling Category",
+     "path": "HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\\Tasks\\Games",
+     "rtype": 1,
+     "value": "High"
+    },
+    {
+     "name": "SFIO Priority",
+     "path": "HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\\Tasks\\Games",
+     "rtype": 1,
+     "value": "High"
+    }
+   ],
+   "why": "Spiel bekommt Vorrang."
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": false,
+   "categories": [
+    "Gaming"
+   ],
+   "description": "Kürzeste Verzögerung, höchste Rate.",
+   "dynamic": null,
+   "evidence": "klein",
+   "hook": "",
+   "id": "keyboard_fast",
+   "impact": "KeyboardDelay 0, KeyboardSpeed 31.",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "registry",
+   "name": "Schnelle Tastaturwiederholung",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "competitive",
+   "restart": "Neuanmeldung",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [
+    "LATENZ"
+   ],
+   "values": [
+    {
+     "name": "KeyboardDelay",
+     "path": "Control Panel\\Keyboard",
+     "rtype": 1,
+     "value": "0"
+    },
+    {
+     "name": "KeyboardSpeed",
+     "path": "Control Panel\\Keyboard",
+     "rtype": 1,
+     "value": "31"
+    }
+   ],
+   "why": "Schnellere Tasten."
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": false,
+   "categories": [
+    "Gaming",
+    "Latenz"
+   ],
+   "description": "1:1-Mausbewegung.",
+   "dynamic": null,
+   "evidence": "klein",
+   "hook": "mouse_live",
+   "id": "mouse_accel",
+   "impact": "Setzt Zeigerbeschleunigung auf 0 und übernimmt sofort.",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "registry",
+   "name": "Mausbeschleunigung aus",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "baseline",
+   "restart": "Nein",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [
+    "LATENZ"
+   ],
+   "values": [
+    {
+     "name": "MouseSpeed",
+     "path": "Control Panel\\Mouse",
+     "rtype": 1,
+     "value": "0"
+    },
+    {
+     "name": "MouseThreshold1",
+     "path": "Control Panel\\Mouse",
+     "rtype": 1,
+     "value": "0"
+    },
+    {
+     "name": "MouseThreshold2",
+     "path": "Control Panel\\Mouse",
+     "rtype": 1,
+     "value": "0"
+    }
+   ],
+   "why": "Gleichmäßige Mausbewegung."
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": true,
+   "categories": [
+    "Latenz"
+   ],
+   "description": "Effizientere Interrupts für die Grafikkarte.",
+   "dynamic": "<function msi_gpu_values at 0x>",
+   "evidence": "klein",
+   "hook": "",
+   "id": "msi_gpu",
+   "impact": "Aktiviert Message Signaled Interrupts für alle Grafikkarten. Aktuelle RTX-Treiber nutzen das oft schon, dann ändert sich nichts.",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "registry",
+   "name": "GPU Interrupts (MSI)",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "",
+   "restart": "Neustart",
+   "risk": "mittel",
+   "status_fn": null,
+   "tags": [
+    "LATENZ"
+   ],
+   "values": [],
+   "why": "Weniger DPC-Latenz."
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {
+    "*EEE": "0",
+    "*FlowControl": "0",
+    "AdvancedEEE": "0",
+    "EEELinkAdvertisement": "0",
+    "EnableGreenEthernet": "0",
+    "GigaLite": "0",
+    "GreenEthernet": "0",
+    "PowerSavingMode": "0",
+    "ULPMode": "0"
+   },
+   "admin": true,
+   "categories": [
+    "Netzwerk"
+   ],
+   "description": "Stabilerer Ping: keine Energiespar-Pausen im Netzwerkchip.",
+   "dynamic": null,
+   "evidence": "klein",
+   "hook": "",
+   "id": "net_adapter_stable",
+   "impact": "Schaltet Energy-Efficient-Ethernet, Green Ethernet und Flow Control am verbundenen LAN-Adapter aus. Diese Funktionen verursachen Mikro-Pausen und Ping-Spitzen. Die Verbindung unterbricht dabei 1–3 s.",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "netadapter",
+   "name": "LAN-Adapter ohne Sparmodus",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "desktop",
+   "restart": "Nein",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [
+    "PING"
+   ],
+   "values": [],
+   "why": "Weniger Ping-Spitzen."
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {
+    "*InterruptModeration": "0"
+   },
+   "admin": true,
+   "categories": [
+    "Netzwerk",
+    "Latenz"
+   ],
+   "description": "Pakete werden sofort statt gebündelt verarbeitet.",
+   "dynamic": null,
+   "evidence": "klein",
+   "hook": "",
+   "id": "net_interrupt_mod_off",
+   "impact": "Interrupt Moderation aus: etwas geringere Latenz, dafür minimal mehr CPU-Last bei viel Traffic.",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "netadapter",
+   "name": "LAN: Interrupt-Bündelung aus",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "",
+   "restart": "Nein",
+   "risk": "mittel",
+   "status_fn": null,
+   "tags": [
+    "PING",
+    "LATENZ"
+   ],
+   "values": [],
+   "why": ""
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": true,
+   "categories": [
+    "Netzwerk",
+    "Gaming"
+   ],
+   "description": "Windows bremst Pakete beim Spielen nicht mehr.",
+   "dynamic": null,
+   "evidence": "schwach",
+   "hook": "",
+   "id": "net_throttle_off",
+   "impact": "NetworkThrottlingIndex aus und Systemreaktionszeit 0 %. Wirkt vor allem bei laufender Musik/Stream.",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "registry",
+   "name": "Netzwerk-Drosselung aus",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "",
+   "restart": "Neustart",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [
+    "PING",
+    "FPS"
+   ],
+   "values": [
+    {
+     "name": "NetworkThrottlingIndex",
+     "path": "HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile",
+     "rtype": 4,
+     "value": 4294967295
+    },
+    {
+     "name": "SystemResponsiveness",
+     "path": "HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile",
+     "rtype": 4,
+     "value": 0
+    }
+   ],
+   "why": "Keine Paket-Drosselung."
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": false,
+   "categories": [
+    "Gaming"
+   ],
+   "description": "Windows-Energieplan 'Höchstleistung'.",
+   "dynamic": null,
+   "evidence": "klein",
+   "hook": "",
+   "id": "power_high",
+   "impact": "Alternative zu 'Ultimative Leistung'.",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "power",
+   "name": "Höchstleistung",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "high",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "",
+   "restart": "Nein",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [
+    "FPS"
+   ],
+   "values": [],
+   "why": ""
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": true,
+   "categories": [
+    "Gaming"
+   ],
+   "description": "Windows drosselt keine Hintergrund-Programme auf Sparmodus.",
+   "dynamic": null,
+   "evidence": "klein",
+   "hook": "",
+   "id": "power_throttling_off",
+   "impact": "Spiel und Launcher laufen mit voller Leistung. Minimal mehr Verbrauch.",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "registry",
+   "name": "Power Throttling aus",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "desktop",
+   "restart": "Neustart",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [
+    "FPS"
+   ],
+   "values": [
+    {
+     "name": "PowerThrottlingOff",
+     "path": "HKLM\\SYSTEM\\CurrentControlSet\\Control\\Power\\PowerThrottling",
+     "rtype": 4,
+     "value": 1
+    }
+   ],
+   "why": "Konstante Taktung."
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": false,
+   "categories": [
+    "Gaming",
+    "Latenz"
+   ],
+   "description": "Stärkster Windows-Energieplan, kein Takt-Absenken.",
+   "dynamic": null,
+   "evidence": "klein",
+   "hook": "",
+   "id": "power_ultimate",
+   "impact": "Legt den versteckten Plan 'Ultimative Leistung' an. Mehr Verbrauch und Wärme. Fällt auf Höchstleistung zurück, falls nicht vorhanden.",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "power",
+   "name": "Ultimative Leistung",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "ultimate",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "desktop",
+   "restart": "Nein",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [
+    "FPS",
+    "FRAMETIME"
+   ],
+   "values": [],
+   "why": "Stabilere Taktung am Desktop."
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": false,
+   "categories": [
+    "Gaming",
+    "Latenz"
+   ],
+   "description": "Die CPU taktet bei Last schneller hoch.",
+   "dynamic": null,
+   "evidence": "klein",
+   "hook": "",
+   "id": "ps_boost_aggressive",
+   "impact": "Prozessor-Leistungsboost-Modus 'Aggressiv' (Netzbetrieb). Schnelleres Hochtakten bei Lastspitzen, minimal mehr Verbrauch.",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "powersetting",
+   "name": "CPU-Boost aggressiv",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "PERFBOOSTMODE",
+   "ps_sub": "SUB_PROCESSOR",
+   "ps_value": 2,
+   "recommended": "",
+   "restart": "Nein",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [
+    "FRAMETIME"
+   ],
+   "values": [],
+   "why": ""
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": false,
+   "categories": [
+    "Gaming",
+    "Latenz"
+   ],
+   "description": "Alle CPU-Kerne bleiben aktiv.",
+   "dynamic": null,
+   "evidence": "klein",
+   "hook": "",
+   "id": "ps_core_parking_off",
+   "impact": "Verhindert, dass Windows Kerne schlafen legt und bei Lastspitzen erst aufwecken muss.",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "powersetting",
+   "name": "Kernparken aus",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "CPMINCORES",
+   "ps_sub": "SUB_PROCESSOR",
+   "ps_value": 100,
+   "recommended": "desktop",
+   "restart": "Nein",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [
+    "FRAMETIME"
+   ],
+   "values": [],
+   "why": "Weniger Aufwach-Ruckler."
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": false,
+   "categories": [
+    "Gaming",
+    "Latenz"
+   ],
+   "description": "Prozessor-Mindestzustand 100 % im Netzbetrieb.",
+   "dynamic": null,
+   "evidence": "klein",
+   "hook": "",
+   "id": "ps_min_cpu",
+   "impact": "Die CPU taktet nicht mehr herunter und reagiert ohne Hochtakt-Verzögerung. Mehr Leerlaufverbrauch.",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "powersetting",
+   "name": "CPU-Takt immer oben",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "PROCTHROTTLEMIN",
+   "ps_sub": "SUB_PROCESSOR",
+   "ps_value": 100,
+   "recommended": "desktop",
+   "restart": "Nein",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [
+    "FRAMETIME",
+    "LATENZ"
+   ],
+   "values": [],
+   "why": "Kein Takt-Absenken beim Spielen."
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": false,
+   "categories": [
+    "Latenz"
+   ],
+   "description": "Die GPU-Verbindung schläft nie ein.",
+   "dynamic": null,
+   "evidence": "klein",
+   "hook": "",
+   "id": "ps_pcie_aspm_off",
+   "impact": "Link State Power Management aus. Vermeidet seltene Aufwach-Verzögerungen der Grafikkarte.",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "powersetting",
+   "name": "PCIe-Sparmodus aus",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "ASPM",
+   "ps_sub": "SUB_PCIE",
+   "ps_value": 0,
+   "recommended": "desktop",
+   "restart": "Nein",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [
+    "FRAMETIME"
+   ],
+   "values": [],
+   "why": "Keine GPU-Aufwach-Ruckler."
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": false,
+   "categories": [
+    "Latenz"
+   ],
+   "description": "Maus und Tastatur schlafen nie ein.",
+   "dynamic": null,
+   "evidence": "klein",
+   "hook": "",
+   "id": "ps_usb_suspend_off",
+   "impact": "USB Selective Suspend aus (Netzbetrieb).",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "powersetting",
+   "name": "USB-Sparmodus aus",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "48e6b7a6-50f5-4782-a5d4-53bb8f07e226",
+   "ps_sub": "2a737441-1930-4402-8d77-b2bebba308a3",
+   "ps_value": 0,
+   "recommended": "desktop",
+   "restart": "Nein",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [
+    "LATENZ"
+   ],
+   "values": [],
+   "why": "Keine Aufwach-Verzögerung."
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": false,
+   "categories": [
+    "Gaming"
+   ],
+   "description": "Keine 5x-Shift-Fenster mitten im Match.",
+   "dynamic": null,
+   "evidence": "klein",
+   "hook": "",
+   "id": "sticky_keys_off",
+   "impact": "Schaltet Einrast-, Umschalt- und Anschlagverzögerung-Popups aus.",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "registry",
+   "name": "Tastatur-Popups aus",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "baseline",
+   "restart": "Neuanmeldung",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [
+    "FPS"
+   ],
+   "values": [
+    {
+     "name": "Flags",
+     "path": "Control Panel\\Accessibility\\StickyKeys",
+     "rtype": 1,
+     "value": "506"
+    },
+    {
+     "name": "Flags",
+     "path": "Control Panel\\Accessibility\\ToggleKeys",
+     "rtype": 1,
+     "value": "58"
+    },
+    {
+     "name": "Flags",
+     "path": "Control Panel\\Accessibility\\Keyboard Response",
+     "rtype": 1,
+     "value": "122"
+    }
+   ],
+   "why": "Verhindert, dass Fortnite minimiert wird."
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": true,
+   "categories": [
+    "System"
+   ],
+   "description": "Weniger Diagnosedaten-Versand.",
+   "dynamic": null,
+   "evidence": "schwach",
+   "hook": "",
+   "id": "telemetry_policy",
+   "impact": "AllowTelemetry=0. Home-Editionen nutzen die niedrigste erlaubte Stufe.",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "registry",
+   "name": "Telemetrie minimal",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "",
+   "restart": "Neustart",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [],
+   "values": [
+    {
+     "name": "AllowTelemetry",
+     "path": "HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection",
+     "rtype": 4,
+     "value": 0
+    }
+   ],
+   "why": ""
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": true,
+   "categories": [
+    "Latenz"
+   ],
+   "description": "Konstante 0,5-ms-Zeitgeber für flüssigere Frametimes.",
+   "dynamic": null,
+   "evidence": "klein",
+   "hook": "",
+   "id": "timer_res",
+   "impact": "GlobalTimerResolutionRequests=1 (ab Windows 11 relevant). Mehr Timer-Genauigkeit, minimal mehr Stromverbrauch.",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "registry",
+   "name": "Präzise Zeitgeber",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "",
+   "restart": "Neustart",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [
+    "LATENZ",
+    "FRAMETIME"
+   ],
+   "values": [
+    {
+     "name": "GlobalTimerResolutionRequests",
+     "path": "HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\kernel",
+     "rtype": 4,
+     "value": 1
+    }
+   ],
+   "why": "Gleichmäßigere Frametimes."
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": false,
+   "categories": [
+    "System"
+   ],
+   "description": "Weniger DWM-Last.",
+   "dynamic": null,
+   "evidence": "schwach",
+   "hook": "",
+   "id": "transparency_off",
+   "impact": "EnableTransparency=0.",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "registry",
+   "name": "Transparenz aus",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "",
+   "restart": "Nein",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [],
+   "values": [
+    {
+     "name": "EnableTransparency",
+     "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
+     "rtype": 4,
+     "value": 0
+    }
+   ],
+   "why": ""
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": true,
+   "categories": [
+    "Gaming",
+    "Latenz"
+   ],
+   "description": "Windows-Sicherheitsfunktion aus: messbar mehr FPS.",
+   "dynamic": null,
+   "evidence": "belegt",
+   "hook": "",
+   "id": "vbs_off",
+   "impact": "Schaltet VBS/HVCI ab. Tests von Tom's Hardware zeigten im Schnitt ca. 5 % mehr FPS (bis 17 % in einzelnen Spielen), besonders bei den 1%-Lows; PCWorld sah teils nur Messtoleranz. Nachteil: weniger Schutz vor Kernel-Angriffen. Windows kann den Wert per Richtlinie zurücksetzen.",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "registry",
+   "name": "Speicher-Integrität (HVCI) aus",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "",
+   "restart": "Neustart",
+   "risk": "mittel",
+   "status_fn": null,
+   "tags": [
+    "FPS",
+    "FRAMETIME"
+   ],
+   "values": [
+    {
+     "name": "Enabled",
+     "path": "HKLM\\SYSTEM\\CurrentControlSet\\Control\\DeviceGuard\\Scenarios\\HypervisorEnforcedCodeIntegrity",
+     "rtype": 4,
+     "value": 0
+    },
+    {
+     "name": "EnableVirtualizationBasedSecurity",
+     "path": "HKLM\\SYSTEM\\CurrentControlSet\\Control\\DeviceGuard",
+     "rtype": 4,
+     "value": 0
+    }
+   ],
+   "why": "Messbarer FPS-Gewinn, Sicherheits-Kompromiss."
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": false,
+   "categories": [
+    "System"
+   ],
+   "description": "Weniger Animationen und Effekte.",
+   "dynamic": null,
+   "evidence": "schwach",
+   "hook": "",
+   "id": "visualfx",
+   "impact": "VisualFXSetting=2.",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "registry",
+   "name": "Windows-Effekte: beste Leistung",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "",
+   "restart": "Neuanmeldung",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [],
+   "values": [
+    {
+     "name": "VisualFXSetting",
+     "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\VisualEffects",
+     "rtype": 4,
+     "value": 2
+    }
+   ],
+   "why": ""
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": true,
+   "categories": [
+    "Gaming",
+    "Latenz"
+   ],
+   "description": "Das aktive Spiel bekommt mehr Rechenzeit.",
+   "dynamic": null,
+   "evidence": "schwach",
+   "hook": "",
+   "id": "win32_prio",
+   "impact": "Win32PrioritySeparation = 0x: kurze, feste Zeitscheiben mit starker Vordergrund-Bevorzugung.",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "registry",
+   "name": "Vordergrund-Boost",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "",
+   "restart": "Neustart",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [
+    "LATENZ",
+    "FRAMETIME"
+   ],
+   "values": [
+    {
+     "name": "Win32PrioritySeparation",
+     "path": "HKLM\\SYSTEM\\CurrentControlSet\\Control\\PriorityControl",
+     "rtype": 4,
+     "value": 38
+    }
+   ],
+   "why": "Vordergrund vor Hintergrund."
+  },
+  {
+   "action_id": "",
+   "action_label": "Ausfuehren",
+   "adapter_props": {},
+   "admin": false,
+   "categories": [
+    "System"
+   ],
+   "description": "Fenster reagieren direkter.",
+   "dynamic": null,
+   "evidence": "schwach",
+   "hook": "",
+   "id": "window_anim_off",
+   "impact": "MinAnimate=0.",
+   "info_text": "",
+   "ini_section": "",
+   "ini_values": {},
+   "kind": "registry",
+   "name": "Fensteranimationen aus",
+   "open_label": "",
+   "open_uri": "",
+   "power_target": "",
+   "ps_setting": "",
+   "ps_sub": "",
+   "ps_value": 0,
+   "recommended": "",
+   "restart": "Neuanmeldung",
+   "risk": "niedrig",
+   "status_fn": null,
+   "tags": [],
+   "values": [
+    {
+     "name": "MinAnimate",
+     "path": "Control Panel\\Desktop\\WindowMetrics",
+     "rtype": 1,
+     "value": "0"
+    }
+   ],
+   "why": ""
+  }
+ ]
+}
